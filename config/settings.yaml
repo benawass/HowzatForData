@@ -1,4 +1,5 @@
 paths:
   raw_data: "data/raw/tests_male_json"
-  ingested_data: "data/ingested"
+  ingested_data: "data/ingested/cricket_data.parquet"
+  preprocessed_data: "data/ingested/cricket_data_preprocessed.parquet"
   log_file: "logs/project.log"
