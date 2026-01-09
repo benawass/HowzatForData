@@ -1,6 +1,7 @@
 from src.config_loader import load_config
 from src.logging_config import setup_logging
 from src.data_ingestor import CricketDataIngestor
+from src.data_preprocessor import CricketDataPreprocessor
 from pathlib import Path
 
 def main():
@@ -20,6 +21,14 @@ def main():
     ingested_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_parquet(ingested_path, index=False)
     logger.info(f"Ingested Data saved to parquet at {ingested_path}")
+
+    # Preprocess Data
+    preprocessor = CricketDataPreprocessor(df)
+    df = preprocessor.clean_data()
+    preprocessed_path = ingested_dir / "cricket_data_preprocessed.parquet"
+    preprocessed_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(preprocessed_path, index=False)
+    logger.info(f"Preprocessed Data saved to parquet at {preprocessed_path}")
 
     logger.info("HowzatForData Completed")
 
