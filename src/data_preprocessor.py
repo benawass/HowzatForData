@@ -1,8 +1,7 @@
 """
 Cricket Data Preprocessor
 
-Preprocesses cricket data from ingested form to a cleaned database ready for ML 
-with features and validity checks. 
+Preprocesses cricket data from ingested form to a cleaned database with validity checks. 
 """
 import logging
 import warnings
