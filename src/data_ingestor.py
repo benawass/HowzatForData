@@ -164,6 +164,7 @@ class CricketDataIngestor:
             "outcome_by_runs": outcome_by.get("runs"),
             "outcome_by_wickets": outcome_by.get("wickets"),
             "outcome_by_innings": outcome_by.get("innings"),
+            "outcome_method": outcome.get("method"),  # e.g., "Awarded", "D/L"
             "outcome_result": outcome.get("result"),  # e.g., "draw", "tie", "no result"
             "player_of_match": ",".join(player_of_match) if player_of_match else None,
             # Officials
